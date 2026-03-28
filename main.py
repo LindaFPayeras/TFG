@@ -1,6 +1,9 @@
 import streamlit as st
-import pickle 
-import streamlit_authenticator as stauth
 
-def main():
-    pass
+if not st.user.is_logged_in:
+    if st.button("Login"):
+        st.user.login()
+else:
+    st.write(f"Hello, {st.user.name}!")
+    if st.button("Logout"):
+        st.user.logout()
