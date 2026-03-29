@@ -7,3 +7,4 @@ else:
     st.write(f"Hello, {st.user.name}!")
     if st.button("Logout"):
         st.user.logout()
+
