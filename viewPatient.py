@@ -88,7 +88,6 @@ with chat:
             {"role":"user","content":prompt}
         )
 
-        # respuesta simple (luego irá tu IA)
         response = "Thank you for sharing that."
 
         st.session_state.messages.append(
