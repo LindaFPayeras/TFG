@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">front</string>
+    <string name="login">LogIn</string>
+    <string name="signin">SignIn</string>
+    <string name="username_hint">How should we call you?</string>
+    <string name="password_hint">Add a secure password</string>
+</resources>
