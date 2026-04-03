@@ -17,7 +17,7 @@
             android:padding="16dp"
             android:gravity="center"
             android:text="@string/appname"
-            android:textColor="@color/black"
+            android:textColor="@color/purple_500"
             android:textSize="32sp"
             android:textStyle="bold" />
 
