@@ -12,10 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Front">
         <activity
-            android:name=".MainActivity"
+            android:name=".activityMain"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Front">
+            android:theme="@style/Theme.Front"
+            tools:ignore="MissingClass">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
