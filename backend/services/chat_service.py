@@ -9,14 +9,21 @@ from backend.services.storage_service import (
 
 from transformers import pipeline
 
-classifier = pipeline(
-    "text-classification",
-    model="ayoubkirouane/BERT-Emotions-Classifier",
-    return_all_scores=True
-)
+classifier = None
+
+def get_classifier():
+    global classifier
+    if classifier is None:
+        classifier = pipeline(
+            "text-classification",
+            model="ayoubkirouane/BERT-Emotions-Classifier",
+            return_all_scores=True
+        )
+    return classifier
 
 def chat_user(data: ChatMessage) -> dict:
-    results = classifier(data.message)[0]
+    classifier_instance = get_classifier()
+    results = classifier_instance(data.message)[0]
 
     sorted_results = sorted(results, key=lambda x: x['score'], reverse=True) 
     emotion = sorted_results[0]['label'] # Devuelve la label con más puntuación tras ordenarlas
