@@ -7,9 +7,20 @@ from backend.services.storage_service import (
     load_users,
 )
 
+from transformers import pipeline
+
+classifier = pipeline(
+    "text-classification",
+    model="ayoubkirouane/BERT-Emotions-Classifier",
+    return_all_scores=True
+)
 
 def chat_user(data: ChatMessage) -> dict:
-    emotion = "sadness"
+    results = classifier(data.message)[0]
+
+    sorted_results = sorted(results, key=lambda x: x['score'], reverse=True) 
+    emotion = sorted_results[0]['label'] # Devuelve la label con más puntuación tras ordenarlas
+
     response = "Gracias por compartir esto"
     timestamp = data.timestamp.isoformat()
 
@@ -50,3 +61,4 @@ def login(credentials: dict) -> dict:
             return {"access_token": "your_access_token"}
 
     raise HTTPException(status_code=401, detail="Invalid credentials")
+

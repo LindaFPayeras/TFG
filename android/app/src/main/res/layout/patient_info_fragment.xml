@@ -94,7 +94,7 @@
             android:hint="What should the AI know after the session?"
             android:textSize="16sp"
             />
-
+        
         <ImageButton
             android:id="@+id/send_button"
             android:layout_width="48dp"
