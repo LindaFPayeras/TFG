@@ -10,7 +10,7 @@
         android:layout_margin="16dp"
         android:layout_height="0dp"
         android:layout_weight="1"
-        tools:listitem="@layout/item_message_send"
+        tools:listitem="@layout/item_message_user"
         tools:itemCount="1"
         />
 

@@ -19,7 +19,7 @@ public class activityMain extends AppCompatActivity {
 
         // Cargar fragmento inicial
         if (savedInstanceState == null) {
-            loadFragment(new fragmentPatients());
+            loadFragment(new fragmentChat());
         }
 
         // Bottom Navigation
@@ -27,7 +27,7 @@ public class activityMain extends AppCompatActivity {
             int itemId = item.getItemId();
 
             if (itemId == R.id.home){
-                loadFragment(new fragmentPatients());
+                loadFragment(new fragmentChat());
                 return true;
             } else if (itemId == R.id.profile){
                 loadFragment(new fragmentProfile());
