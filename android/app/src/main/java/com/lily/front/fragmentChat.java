@@ -1,6 +1,7 @@
 package com.lily.front;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,18 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.lily.front.network.ApiService;
+import com.lily.front.network.RetrofitClient;
+import com.lily.front.network.models.ChatRequest;
+import com.lily.front.network.models.ChatResponse;
 import com.lily.front.network.models.Message;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class fragmentChat extends Fragment {
 
@@ -24,25 +33,31 @@ public class fragmentChat extends Fragment {
     private MessageAdapter messageAdapter;
     private List<Message> messageList;
 
+    private ApiService apiService;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_chat, container, false);
 
-        // 1. Vincular vistas
+        apiService = RetrofitClient.getClient().create(ApiService.class);
+
+        Log.d("CHAT", "apiService inicializado? " + (apiService != null));
+
+        // Vistas
         sendButton = view.findViewById(R.id.btn_send);
         messageEditText = view.findViewById(R.id.et_message);
         recyclerView = view.findViewById(R.id.rv_messages);
 
-        // 2. Configurar RecyclerView
+        // RecyclerView
         messageList = new ArrayList<>();
         messageAdapter = new MessageAdapter(messageList);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(messageAdapter);
 
-        // 3. Listener botón
+        // Botón
         sendButton.setOnClickListener(v -> sendMessage());
 
         return view;
@@ -53,16 +68,46 @@ public class fragmentChat extends Fragment {
 
         if (messageText.isEmpty()) return;
 
-        // Crear mensaje del usuario
+        // Mensaje usuario
         Message userMessage = new Message(messageText, "user");
-
-        // Añadirlo a la lista
         messageList.add(userMessage);
-
-        // Notificar al adapter
         messageAdapter.notifyItemInserted(messageList.size() - 1);
 
-        // Limpiar el input
         messageEditText.setText("");
+
+        String userId = "1";
+
+        ChatRequest request = new ChatRequest(userId, messageText, "00.30");
+
+        Log.d("CHAT", "Enviando: " + messageText);
+        Log.d("CHAT", "apiService null? " + (apiService == null));
+
+        apiService.sendMessage(request).enqueue(new Callback<ChatResponse>() {
+
+            @Override
+            public void onResponse(Call<ChatResponse> call, Response<ChatResponse> response) {
+
+                Log.d("CHAT", "Respuesta recibida");
+
+                if (response.isSuccessful() && response.body() != null) {
+
+                    String botReply = response.body().getResponse();
+
+                    Log.d("CHAT", "Bot: " + botReply);
+
+                    Message botMessage = new Message(botReply, "bot");
+
+                    messageList.add(botMessage);
+                    messageAdapter.notifyItemInserted(messageList.size() - 1);
+                } else {
+                    Log.e("CHAT", "Respuesta no válida");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ChatResponse> call, Throwable t) {
+                Log.e("CHAT", "Error: " + t.getMessage());
+            }
+        });
     }
 }

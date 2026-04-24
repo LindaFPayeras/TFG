@@ -8,7 +8,7 @@ from backend.services.storage_service import (
 )
 
 from transformers import pipeline
-from ollama_prompt import chat_user as ollama_chat_user
+#from ollama_prompt import chat_user as ollama_chat_user
 
 classifier = None
 
@@ -29,7 +29,10 @@ def chat_user(data: ChatMessage) -> dict:
     sorted_results = sorted(results, key=lambda x: x['score'], reverse=True) 
     emotion = sorted_results[0]['label'] # Devuelve la label con más puntuación tras ordenarlas
 
-    response = ollama_chat_user({"message": data.message})
+    emotion = "prueba_emocion"  # Simulación de emoción, reemplaza con emotion real cuando esté disponible
+
+    # response = ollama_chat_user({"message": data.message})
+    response = "This is a simulated response."
     timestamp = data.timestamp.isoformat()
 
     history = load_history(data.user_id)

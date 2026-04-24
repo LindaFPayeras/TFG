@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         tools:listitem="@layout/item_message_user"
-        tools:itemCount="1"
+        tools:itemCount="3"
         />
 
     <LinearLayout
