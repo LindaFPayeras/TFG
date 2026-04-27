@@ -1,7 +1,8 @@
 from fastapi import APIRouter
 from backend.models.chat_models import ChatMessage
 from backend.services.chat_service import chat_user
-import datetime
+from backend.services.summary_service import get_report
+from datetime import datetime
 
 router = APIRouter()
 
@@ -17,12 +18,6 @@ def report(user_id: str, start: str, end: str):
     to_date = datetime.fromisoformat(end)
 
     return get_report(user_id, from_date, to_date)
-
-
-# @router.get("/summary/{user_id}")
-# def read_summary(user_id: str):
-#     return get_summary(user_id)
-
 
 # @router.post("/login")
 # def login_route(credentials: dict):
