@@ -1,0 +1,16 @@
+[
+  {
+    "user_id": "string",
+    "role": "user",
+    "content": "Im tired",
+    "emotion": "sadness",
+    "timestamp": "2026-04-27T14:49:33.288901"
+  },
+  {
+    "user_id": "string",
+    "role": "assistant",
+    "content": "Respuesta simulada",
+    "emotion": null,
+    "timestamp": "2026-04-27T14:49:33.288901"
+  }
+]
