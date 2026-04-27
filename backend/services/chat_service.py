@@ -26,8 +26,8 @@ def chat_user(data: ChatMessage) -> dict:
     classifier_instance = get_classifier()
     results = classifier_instance(data.message)[0]
 
-    sorted_results = sorted(results, key=lambda x: x['score'], reverse=True) 
-    emotion = sorted_results[0]['label'] # Devuelve la label con más puntuación tras ordenarlas
+    # sorted_results = sorted(results, key=lambda x: x['score'], reverse=True) 
+    # emotion = sorted_results[0]['label'] # Devuelve la label con más puntuación tras ordenarlas
 
     emotion = "prueba_emocion"  # Simulación de emoción, reemplaza con emotion real cuando esté disponible
 
