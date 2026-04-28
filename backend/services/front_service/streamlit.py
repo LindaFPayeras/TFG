@@ -1,13 +1,13 @@
 from dataclasses import dataclass
 from typing import Literal
-import streamlit as st
+import backend.services.front_service.streamlit as st
 import streamlit.components.v1 as components
 
 @dataclass
 class Message:
-    """Class for keeping track of a chat message."""
     origin: Literal["human", "ai"]
     message: str
+    emotion: str = None
 
 def load_css():
     with open("static/styles.css", "r") as f:
@@ -20,15 +20,7 @@ def initialize_session_state():
     if "token_count" not in st.session_state:
         st.session_state.token_count = 0
     if "conversation" not in st.session_state:
-        llm = OpenAI(
-            temperature=0,
-            openai_api_key=st.secrets["openai_api_key"],
-            model_name="text-davinci-003"
-        )
-        st.session_state.conversation = ConversationChain(
-            llm=llm,
-            memory=ConversationSummaryMemory(llm=llm),
-        )
+        pass 
 
 def on_click_callback():
     with get_openai_callback() as cb:

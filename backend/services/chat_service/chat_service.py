@@ -2,8 +2,8 @@ from datetime import datetime
 from transformers import pipeline
 
 from backend.models.chat_models import ChatMessage
-from backend.services.storage_service import load_history, save_history
-from backend.services.ollama_service import generate_response
+from backend.services.data_service.storage_service import load_history, save_history
+from backend.services.chat_service.ollama_service import generate_response
 classifier = None
 
 def get_classifier():

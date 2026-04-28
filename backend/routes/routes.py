@@ -15,8 +15,13 @@ def chat(data: ChatMessage):
 def report(user_id: str, start: str, end: str):
     from_date = datetime.fromisoformat(start)
     to_date = datetime.fromisoformat(end)
-
     return get_report(user_id, from_date, to_date)
+
+@router.post("/data/{user_id}")
+def data(user_id: str, data: dict):
+    #TODO: Implementar endopoint para recibir el documento de hisotrial del usuario
+    pass
+
 
 # @router.post("/login")
 # def login_route(credentials: dict):
