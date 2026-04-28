@@ -1,11 +1,10 @@
 from fastapi import APIRouter
 from backend.models.chat_models import ChatMessage
-from backend.services.chat_service import chat_user
-from backend.services.summary_service import get_report
+from backend.services.chat_service.chat_service import chat_user
+from backend.services.summary_service.summary_service import get_report
 from datetime import datetime
 
 router = APIRouter()
-
 
 @router.post("/chat")
 def chat(data: ChatMessage):

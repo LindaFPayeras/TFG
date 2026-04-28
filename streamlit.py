@@ -1,36 +1,119 @@
+from dataclasses import dataclass
+from typing import Literal
 import streamlit as st
-from streamlit_ollama import ollama_chat_user
-# Configuración de la página
-st.set_page_config(page_title="Chat App", page_icon="💬")
+import streamlit.components.v1 as components
 
-st.title("💬 Chat con Streamlit")
+@dataclass
+class Message:
+    """Class for keeping track of a chat message."""
+    origin: Literal["human", "ai"]
+    message: str
 
-# Inicializar historial de mensajes
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+def load_css():
+    with open("static/styles.css", "r") as f:
+        css = f"<style>{f.read()}</style>"
+        st.markdown(css, unsafe_allow_html=True)
 
-# Mostrar mensajes anteriores
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+def initialize_session_state():
+    if "history" not in st.session_state:
+        st.session_state.history = []
+    if "token_count" not in st.session_state:
+        st.session_state.token_count = 0
+    if "conversation" not in st.session_state:
+        llm = OpenAI(
+            temperature=0,
+            openai_api_key=st.secrets["openai_api_key"],
+            model_name="text-davinci-003"
+        )
+        st.session_state.conversation = ConversationChain(
+            llm=llm,
+            memory=ConversationSummaryMemory(llm=llm),
+        )
 
-# Input del usuario
-prompt = st.chat_input("Escribe un mensaje...")
+def on_click_callback():
+    with get_openai_callback() as cb:
+        human_prompt = st.session_state.human_prompt
+        llm_response = st.session_state.conversation.run(
+            human_prompt
+        )
+        st.session_state.history.append(
+            Message("human", human_prompt)
+        )
+        st.session_state.history.append(
+            Message("ai", llm_response)
+        )
+        st.session_state.token_count += cb.total_tokens
 
-if prompt:
-    # Guardar mensaje del usuario
-    st.session_state.messages.append({"role": "user", "content": prompt})
+load_css()
+initialize_session_state()
 
-    # Mostrar mensaje del usuario
-    with st.chat_message("user"):
-        st.markdown(prompt)
+st.title("Hello Custom CSS Chatbot 🤖")
 
-    # Respuesta fake (puedes conectar aquí tu backend)
-    response = ollama_chat_user({"message": prompt})["response"]  # Simula la respuesta del bot
+chat_placeholder = st.container()
+prompt_placeholder = st.form("chat-form")
+credit_card_placeholder = st.empty()
 
-    # Guardar respuesta del bot
-    st.session_state.messages.append({"role": "assistant", "content": response})
+with chat_placeholder:
+    for chat in st.session_state.history:
+        div = f"""
+<div class="chat-row 
+    {'' if chat.origin == 'ai' else 'row-reverse'}">
+    <img class="chat-icon" src="app/static/{
+        'ai_icon.png' if chat.origin == 'ai' 
+                      else 'user_icon.png'}"
+         width=32 height=32>
+    <div class="chat-bubble
+    {'ai-bubble' if chat.origin == 'ai' else 'human-bubble'}">
+        &#8203;{chat.message}
+    </div>
+</div>
+        """
+        st.markdown(div, unsafe_allow_html=True)
+    
+    for _ in range(3):
+        st.markdown("")
 
-    # Mostrar respuesta del bot
-    with st.chat_message("assistant"):
-        st.markdown(response)
+with prompt_placeholder:
+    st.markdown("**Chat**")
+    cols = st.columns((6, 1))
+    cols[0].text_input(
+        "Chat",
+        value="Hello bot",
+        label_visibility="collapsed",
+        key="human_prompt",
+    )
+    cols[1].form_submit_button(
+        "Submit", 
+        type="primary", 
+        on_click=on_click_callback, 
+    )
+
+credit_card_placeholder.caption(f"""
+Used {st.session_state.token_count} tokens \n
+Debug Langchain conversation: 
+{st.session_state.conversation.memory.buffer}
+""")
+
+components.html("""
+<script>
+const streamlitDoc = window.parent.document;
+
+const buttons = Array.from(
+    streamlitDoc.querySelectorAll('.stButton > button')
+);
+const submitButton = buttons.find(
+    el => el.innerText === 'Submit'
+);
+
+streamlitDoc.addEventListener('keydown', function(e) {
+    switch (e.key) {
+        case 'Enter':
+            submitButton.click();
+            break;
+    }
+});
+</script>
+""", 
+    height=0,
+    width=0,
+)
