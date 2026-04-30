@@ -1,13 +1,13 @@
 from pydantic import BaseModel
 from datetime import datetime
-
+from typing import Optional
 
 class ChatMessage(BaseModel):
     user_id: str
     message: str
-    timestamp: datetime
+    timestamp: Optional[datetime] = None
 
 class ChatResponse(BaseModel):
-    response: str
+    message: str
     emotion: str
-    timestamp: str
+    timestamp: Optional[datetime] = None
