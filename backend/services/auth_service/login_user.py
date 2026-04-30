@@ -3,6 +3,7 @@ import jwt
 from datetime import datetime, timedelta
 from pathlib import Path
 import os
+from fastapi import HTTPException
 
 SECRET_KEY = os.getenv("SECRET_KEY", "dev_secret_key")
 ALGORITHM = "HS256"
@@ -42,14 +43,17 @@ def login_user(credentials):
     )
 
     if not user:
-        return {"error": "Usuario no encontrado"}
+        raise HTTPException(status_code=404, detail="Usuario no encontrado")
 
     if user["password"] != credentials.password:
-        return {"error": "Password incorrecta"}
+        raise HTTPException(status_code=401, detail="Password incorrecta")
 
     token = create_token(user["user_id"])
-
+    
     return {
         "access_token": token,
-        "token_type": "bearer"
+        "token_type": "bearer",
+        "user_id": user["user_id"],
+        "user_type": user["user_type"]
     }
+

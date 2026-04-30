@@ -1,6 +1,8 @@
 import json
 from datetime import datetime
+from backend.services.data_service.storage_service import load_history
 
-def save_user_data():
-    #TODO: Devolver los mensajes antiguos
-    pass
+
+def get_user_history(user_id: str):
+    history = load_history(user_id)
+    return history
