@@ -4,9 +4,9 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 BASE_DIR = Path(__file__).resolve().parents[1]
-DATA_DIR = BASE_DIR / "data"
-HISTORY_DIR = DATA_DIR / "history"
-USERS_FILE = DATA_DIR / "users.json"
+DATA_DIR = BASE_DIR / "data_service" 
+HISTORY_DIR = DATA_DIR / "history" # para el historial del chat
+USERS_FILE = DATA_DIR / "therapist_user" / "therapist_users.json" # lista de usuarios por terapeutas
 
 
 def ensure_data_dirs() -> None:
@@ -49,7 +49,7 @@ def load_summary(user_id: str) -> Dict[str, Any]:
     return load_json(get_summary_filepath(user_id), default=None)
 
 
-def load_users() -> List[Dict[str, Any]]:
+def load_patients() -> List[Dict[str, Any]]:
     if not USERS_FILE.exists():
         raise FileNotFoundError("Users file not found")
     return load_json(USERS_FILE, default=[])

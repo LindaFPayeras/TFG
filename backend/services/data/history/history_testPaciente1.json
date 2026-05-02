@@ -1,0 +1,44 @@
+[
+  {
+    "user_id": "testPaciente1",
+    "role": "user",
+    "content": "Hello",
+    "emotion": "joy",
+    "timestamp": "2026-05-01T11:43:41.829264"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "assistant",
+    "content": "Hola! Estoy aqu\u00ed para escucharte con atenci\u00f3n y comprensi\u00f3n. \u00bfQu\u00e9 te ha llevado a hablar conmigo hoy?",
+    "emotion": null,
+    "timestamp": "2026-05-01T11:43:41.829264"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "user",
+    "content": "Im feeling a bit tired",
+    "emotion": "sadness",
+    "timestamp": "2026-05-01T11:52:30.718791"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "assistant",
+    "content": "Sientes un poco de fatiga, \u00bfeh? Entiendo que eso puede ser inc\u00f3modo y afectar tu d\u00eda. \u00bfHay algo en particular que est\u00e9 sucediendo o que te haya estado preocupando \u00faltimamente que te haga sentir as\u00ed?",
+    "emotion": null,
+    "timestamp": "2026-05-01T11:52:30.718791"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "user",
+    "content": "Its nothing, ive been working on my thesis for 2 weeks in a row and going to bed late... all that stuff u know...",
+    "emotion": "sadness",
+    "timestamp": "2026-05-01T12:02:03.437852"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "assistant",
+    "content": "Entiendo. Est\u00e1s pasando por un momento de mucho estr\u00e9s y esfuerzo con tu tesis. Es normal que te sientas cansado y sin energ\u00eda despu\u00e9s de trabajar durante dos semanas seguidas y no tener tiempo para descansar adecuadamente. \u00bfTe parece que hay algo en particular que te est\u00e9 molestando o que te haya estado preocupando sobre tu tesis?",
+    "emotion": null,
+    "timestamp": "2026-05-01T12:02:03.437852"
+  }
+]
