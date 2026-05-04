@@ -1,7 +1,7 @@
 import streamlit as st
-from backend.front_service.functions import send_message, load_history
+from functions import send_message, load_history
 import requests
-from backend.front_service.config import API_URL
+from config import API_URL
 
 # Estado inicial
 if "logged_in" not in st.session_state:

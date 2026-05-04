@@ -1,0 +1,30 @@
+[
+  {
+    "user_id": "testPaciente2",
+    "role": "user",
+    "content": "Hello, Im feeling a bit itchy today",
+    "emotion": "sadness",
+    "timestamp": "2026-05-03T21:44:01.535842"
+  },
+  {
+    "user_id": "testPaciente2",
+    "role": "assistant",
+    "content": "You're feeling a bit itchy today? That can be really uncomfortable! I'm here to listen and understand what's going on. Can you tell me more about this itchiness? Where is it happening, and how long have you been experiencing it?",
+    "emotion": null,
+    "timestamp": "2026-05-03T21:44:01.535842"
+  },
+  {
+    "user_id": "testPaciente2",
+    "role": "user",
+    "content": "Hmmmm, headache, stomachache, backache... I think its because of posture, ive been sitting doing class stuff and im also tired, everythin wrong to sum up",
+    "emotion": "sadness",
+    "timestamp": "2026-05-03T21:55:55.333202"
+  },
+  {
+    "user_id": "testPaciente2",
+    "role": "assistant",
+    "content": "I sense a bit of frustration and discomfort in your tone! It sounds like you're feeling pretty overwhelmed with all these physical complaints. I understand how it can be really frustrating when our bodies are telling us that something's off.\n\nYou think it might have to do with posture, and being tired on top of that? That makes sense. It's normal to feel achy or uncomfortable after sitting for a long time, especially if you're not used to it.\n\nCan you tell me more about what's been going on in class that's got you feeling this way? Is there something specific that's causing you stress or discomfort?",
+    "emotion": null,
+    "timestamp": "2026-05-03T21:55:55.333202"
+  }
+]

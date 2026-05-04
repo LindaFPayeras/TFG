@@ -40,5 +40,19 @@
     "content": "Entiendo. Est\u00e1s pasando por un momento de mucho estr\u00e9s y esfuerzo con tu tesis. Es normal que te sientas cansado y sin energ\u00eda despu\u00e9s de trabajar durante dos semanas seguidas y no tener tiempo para descansar adecuadamente. \u00bfTe parece que hay algo en particular que te est\u00e9 molestando o que te haya estado preocupando sobre tu tesis?",
     "emotion": null,
     "timestamp": "2026-05-01T12:02:03.437852"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "user",
+    "content": "the fucking deadline",
+    "emotion": "anger",
+    "timestamp": "2026-05-02T13:03:32.821969"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "assistant",
+    "content": "El plazo l\u00edmite. Sientes una gran presi\u00f3n por cumplir con \u00e9l, \u00bfcierto? Es como si el tiempo estuviera corriendo y no puedas controlarlo. \u00bfTe sientes ansioso o estresado pensando en lo que tienes que hacer antes de que se cumpla el plazo?",
+    "emotion": null,
+    "timestamp": "2026-05-02T13:03:32.821969"
   }
 ]

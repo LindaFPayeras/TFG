@@ -6,6 +6,12 @@
     },
 
     {
+        "user_id": "testPaciente2",
+        "user_type": "patient",
+        "password": "1234"
+    },
+
+    {
         "user_id": "testTerapeuta1",
         "user_type": "therapist",
         "password": "5678"

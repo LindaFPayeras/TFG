@@ -1,5 +1,9 @@
 import requests
-from backend.front_service.config import API_URL
+
+try:
+    from .config import API_URL
+except ImportError:
+    from config import API_URL
 
 def send_message(user_id, user_input):
 

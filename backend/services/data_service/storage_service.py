@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 BASE_DIR = Path(__file__).resolve().parents[1]
-DATA_DIR = BASE_DIR / "data_service" 
+DATA_DIR = BASE_DIR / "data_service" / "data"
 HISTORY_DIR = DATA_DIR / "history" # para el historial del chat
 USERS_FILE = DATA_DIR / "therapist_user" / "therapist_users.json" # lista de usuarios por terapeutas
 
