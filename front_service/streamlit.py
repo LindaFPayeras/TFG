@@ -67,5 +67,5 @@ if st.session_state.logged_in:
 
     # Terapeuta
     elif st.session_state.user_type == "therapist":
-        st.title("Panel del terapeuta")
-        st.write("Aquí irá el dashboard (resúmenes, pacientes, etc.)")
+        st.title(f"Bienvenido,{st.session_state.user_id}")
+        patient_list 

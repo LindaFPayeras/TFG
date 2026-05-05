@@ -9,6 +9,7 @@ HISTORY_DIR = DATA_DIR / "history" # para el historial del chat
 USERS_FILE = DATA_DIR / "therapist_user" / "therapist_users.json" # lista de usuarios por terapeutas
 
 
+
 def ensure_data_dirs() -> None:
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
@@ -53,3 +54,4 @@ def load_patients() -> List[Dict[str, Any]]:
     if not USERS_FILE.exists():
         raise FileNotFoundError("Users file not found")
     return load_json(USERS_FILE, default=[])
+
