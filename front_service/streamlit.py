@@ -6,6 +6,8 @@ from config import API_URL
 # Estado inicial
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
+if "selected_patient" not in st.session_state:
+    st.session_state.selected_patient = None
 
 # LOGIN
 if not st.session_state.logged_in:
@@ -67,5 +69,36 @@ if st.session_state.logged_in:
 
     # Terapeuta
     elif st.session_state.user_type == "therapist":
-        st.title(f"Bienvenido,{st.session_state.user_id}")
-        patient_list 
+        if st.session_state.selected_patient is None:
+            st.title(f"Bienvenido, {st.session_state.user_id}")
+            st.subheader("Lista de pacientes")
+
+            # Cargar lista de pacientes
+            response = requests.get(f"{API_URL}/data/relation/{st.session_state.user_id}")
+            if response.status_code == 200:
+                patients = response.json()
+
+                for patient in patients:
+                    if st.button(patient, key=patient):
+                        st.session_state.selected_patient = patient
+                        st.rerun()
+
+            else:
+                st.error("No se ha podido cargar la lista de pacientes")
+        
+        else: # una vez seleccionado paciente
+            st.title(f"{st.session_state.selected_patient}'s Report")
+            response = requests.get(f"{API_URL}/report/{st.session_state.selected_patient}")
+
+            if response.status_code == 200:
+                report = response.json()
+                st.subheader("Summary")
+                st.write(report["summary"])
+                st.subheader("Number of messages")
+                st.write(report["num_messages"])
+
+            else:
+                st.error("No se ha podido cargar el reporte del paciente")
+
+            st.button("Back", on_click=lambda: st.session_state.update({"selected_patient": None}))
+            

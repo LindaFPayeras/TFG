@@ -14,7 +14,7 @@ def format_history_for_summary(messages):
 
     return "\n".join(formatted_messages)
 
-
+system_prompt = open("backend\services\summary_service\system_prompt.txt", "r", encoding="utf-8").read()
 def get_report(user_id: str):
     user_history = load_history(user_id)
 
@@ -26,7 +26,7 @@ def get_report(user_id: str):
         }
 
     formatted_history = format_history_for_summary(user_history)
-    prompt = f"Genera un resumen de las sesiones del usuario:\n{formatted_history}"
+    prompt = f"{system_prompt}\n{formatted_history}"
     summary = call_ollama(prompt)
 
     return {
