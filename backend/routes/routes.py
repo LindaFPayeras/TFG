@@ -1,0 +1,39 @@
+from fastapi import APIRouter
+from datetime import datetime
+
+# Schemas (Pydantic)
+from backend.models.chat_models import ChatMessage
+from backend.models.auth_models import LoginRequest
+from backend.models.history_models import UserData
+
+# Casos de uso / servicios
+from backend.services.chat_service.chat_service import chat_user
+from backend.services.summary_service.summary_service import get_report
+from backend.services.auth_service.login_user import login_user
+from backend.services.data_service.data_service import get_user_history
+from backend.services.data_service.data_service import get_patient_list
+
+
+router = APIRouter()
+
+@router.post("/chat") # Los mensajes en si, contenido
+def chat(data: ChatMessage):
+    return chat_user(data)
+
+@router.get("/report/{user_id}") # Para hacer el resumen del terapéuta
+def report(user_id: str):
+    # from_date = datetime.fromisoformat(start)
+    # to_date = datetime.fromisoformat(end)
+    return get_report(user_id)
+
+@router.get("/data/{user_id}") 
+def messageHistory(user_id: str):
+    return get_user_history(user_id)
+
+@router.post("/auth/login")
+def login(credentials: LoginRequest): 
+    return login_user(credentials)
+
+@router.get("/data/relation/{therapist_id}")
+def patient_list(therapist_id: str):
+    return get_patient_list(therapist_id)

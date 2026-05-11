@@ -1,0 +1,11 @@
+[
+    {
+        "user_id": "testTerapeuta1",
+        "patient_list": ["testPaciente1", "testPaciente2"]
+    },
+
+    {
+        "user_id": "testTerapeuta1",
+        "patient_list": ["testPaciente3", "testPaciente4"]
+    }
+]

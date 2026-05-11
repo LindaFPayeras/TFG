@@ -1,0 +1,100 @@
+[
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "user",
+    "content": "Im feeling thrilled, i just got tickets to BTS concert!!!",
+    "emotion": "joy",
+    "timestamp": "2026-04-27T17:49:40.690183"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "assistant",
+    "content": "No se pudo generar respuesta en este momento.",
+    "emotion": null,
+    "timestamp": "2026-04-27T17:49:40.690183"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "user",
+    "content": "I cant wait to hear So What life!!! Its like i dont wanna kill myself no more haha",
+    "emotion": "optimism",
+    "timestamp": "2026-04-27T17:56:39.342060"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "assistant",
+    "content": "No se pudo generar respuesta en este momento.",
+    "emotion": null,
+    "timestamp": "2026-04-27T17:56:39.342060"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "user",
+    "content": "Could it be i can even see RM??? I cannot believe it!",
+    "emotion": "surprise",
+    "timestamp": "2026-04-27T18:21:15.512748"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "assistant",
+    "content": "No se pudo generar respuesta en este momento.",
+    "emotion": null,
+    "timestamp": "2026-04-27T18:21:15.512748"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "user",
+    "content": "I hope i get to submit everything for that date",
+    "emotion": "anticipation",
+    "timestamp": "2026-04-27T18:31:50.002107"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "assistant",
+    "content": "Entiendo que est\u00e1s emocionada por la oportunidad de ver a BTS en concierto y esperar que todo salga como planeado para esa fecha. \u00bfHay alg\u00fan detalle espec\u00edfico que te preocupe o te hace sentir nerviosa?",
+    "emotion": null,
+    "timestamp": "2026-04-27T18:31:50.002107"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "user",
+    "content": "S\u00ed, siento que no voy a llegar, tengo muchos trabajos y estoy hiper estresada",
+    "emotion": "optimism",
+    "timestamp": "2026-04-27T18:46:51.305592"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "assistant",
+    "content": "Entiendo que tienes un mont\u00f3n de trabajo y que el estr\u00e9s es algo que te preocupa. \u00bfC\u00f3mo se siente tu cuerpo cuando piensas en todo lo que necesitas hacer antes del concierto?",
+    "emotion": null,
+    "timestamp": "2026-04-27T18:46:51.305592"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "user",
+    "content": "A veces siento que me falta el aire la verdad... Hay algo que puedas recomendarme?",
+    "emotion": "anticipation",
+    "timestamp": "2026-04-27T18:51:18.096092"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "assistant",
+    "content": "Suena como si est\u00e1s sintiendo un poco de ansiedad y estr\u00e9s. Entiendo que puede ser dif\u00edcil manejar todo lo que tienes pendiente. \u00bfHay alg\u00fan momento en particular del d\u00eda o semana en que te sientas m\u00e1s apretado?",
+    "emotion": null,
+    "timestamp": "2026-04-27T18:51:18.096092"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "user",
+    "content": "Si, mi psico me dijoq ue puede ser ansiedad.. Me puedes recomendar alguna cosa que hacer para cuando me pase esto?",
+    "emotion": "optimism",
+    "timestamp": "2026-04-27T18:53:27.757713"
+  },
+  {
+    "user_id": "Prueba2_OllamayClasificadorIntegrados",
+    "role": "assistant",
+    "content": "Entiendo que tu psic\u00f3logo ha sugerido que podr\u00eda ser ansiedad. Lo importante es que est\u00e1s en el proceso de explorar y comprender tus sentimientos.\n\nEn cuanto a recomendaciones, \u00bfte parece interesante hacer un ejercicio de respiraci\u00f3n profunda o mindfulness cuando te sientas angustiado? A veces, tomar un momento para relajarte y conectarte con tu cuerpo puede ayudar.",
+    "emotion": null,
+    "timestamp": "2026-04-27T18:53:27.757713"
+  }
+]

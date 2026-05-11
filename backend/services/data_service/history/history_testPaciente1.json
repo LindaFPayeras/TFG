@@ -1,0 +1,16 @@
+[
+  {
+    "user_id": "testPaciente1",
+    "role": "user",
+    "content": "Hello",
+    "emotion": "joy",
+    "timestamp": "2026-05-02T12:23:54.667060"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "assistant",
+    "content": "It's great that you're here talking with me. I'm listening attentively and trying to understand what's on your mind. You don't have to say anything specific; just knowing that someone is here to listen can be comforting. What's been going through your mind lately?",
+    "emotion": null,
+    "timestamp": "2026-05-02T12:23:54.667060"
+  }
+]

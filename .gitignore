@@ -167,3 +167,5 @@ archive.zip
 .DS_Store
 
 .codspeed
+
+config.py
