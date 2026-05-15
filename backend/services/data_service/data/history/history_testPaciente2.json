@@ -2,29 +2,43 @@
   {
     "user_id": "testPaciente2",
     "role": "user",
-    "content": "Hello, Im feeling a bit itchy today",
-    "emotion": "sadness",
-    "timestamp": "2026-05-03T21:44:01.535842"
+    "content": "I\u2019m not really sure why I\u2019m writing this right now\u2026 I guess I just needed to let it out a little.\n\nI\u2019ve had this weird feeling in my chest all afternoon. Like tension. And the more I try to distract myself, the worse it seems to get.\n\nI have to go to class tomorrow and just thinking about it is already making me really anxious. Nothing bad has even happened, but I feel like I\u2019m constantly waiting for something to go wrong.",
+    "emotion": "fear",
+    "timestamp": "2026-05-15T23:13:32.664534"
   },
   {
     "user_id": "testPaciente2",
     "role": "assistant",
-    "content": "You're feeling a bit itchy today? That can be really uncomfortable! I'm here to listen and understand what's going on. Can you tell me more about this itchiness? Where is it happening, and how long have you been experiencing it?",
+    "content": "It sounds like you're feeling a bit stuck and overwhelmed right now. It can be really tough when we're trying to distract ourselves from uncomfortable feelings, but they just seem to get worse instead of better.\n\nI'm here with you, and I want you to know that it's okay to feel anxious about the future, especially when it feels uncertain. It takes a lot of courage to acknowledge those feelings and share them with someone like me.\n\nCan you tell me more about this feeling in your chest? Is it a tightness, a knot, or something else entirely?",
     "emotion": null,
-    "timestamp": "2026-05-03T21:44:01.535842"
+    "timestamp": "2026-05-15T23:13:32.664534"
   },
   {
     "user_id": "testPaciente2",
     "role": "user",
-    "content": "Hmmmm, headache, stomachache, backache... I think its because of posture, ive been sitting doing class stuff and im also tired, everythin wrong to sum up",
+    "content": "Yeah\u2026 it\u2019s kind of hard to explain.\n\nIt\u2019s like this constant pressure, I guess? Not pain exactly, just really uncomfortable. Like I can\u2019t fully relax no matter what I do.\n\nSometimes I start focusing on my breathing too much and then I get even more nervous because it feels \u201cwrong\u201d somehow. Then I start thinking about the fact that I\u2019m thinking about it, and it just spirals.\n\nI know it probably sounds stupid. I keep telling myself I\u2019m overreacting, but my body doesn\u2019t really listen.",
     "emotion": "sadness",
-    "timestamp": "2026-05-03T21:55:55.333202"
+    "timestamp": "2026-05-15T23:16:27.329440"
   },
   {
     "user_id": "testPaciente2",
     "role": "assistant",
-    "content": "I sense a bit of frustration and discomfort in your tone! It sounds like you're feeling pretty overwhelmed with all these physical complaints. I understand how it can be really frustrating when our bodies are telling us that something's off.\n\nYou think it might have to do with posture, and being tired on top of that? That makes sense. It's normal to feel achy or uncomfortable after sitting for a long time, especially if you're not used to it.\n\nCan you tell me more about what's been going on in class that's got you feeling this way? Is there something specific that's causing you stress or discomfort?",
+    "content": "It can be frustrating when our minds and bodies don't seem to align, right? It's like your mind is trying to rationalize things, but your physical sensations are screaming for attention.\n\nI want you to know that it's not stupid at all! Your body is sending you a signal, even if it doesn't make sense to your logical mind. Sometimes our bodies can pick up on subtle cues or emotions before we're consciously aware of them.\n\nIt sounds like you're experiencing a lot of tension and discomfort. Can you tell me more about what's been going through your mind lately? What are some of the thoughts that come up when you're feeling anxious or overwhelmed?",
     "emotion": null,
-    "timestamp": "2026-05-03T21:55:55.333202"
+    "timestamp": "2026-05-15T23:16:27.329440"
+  },
+  {
+    "user_id": "testPaciente2",
+    "role": "user",
+    "content": "Lately it\u2019s mostly been small things that keep building up in my head.\n\nLike if someone takes too long to reply to me, I immediately start thinking I said something wrong or that they\u2019re upset with me. Or if I have a class presentation coming up, I\u2019ll spend days thinking about every possible way I could embarrass myself.\n\nEven when nothing is happening, my brain kind of keeps scanning for problems. It\u2019s exhausting.\n\nAnd at night it gets worse because everything is quiet, so I just end up stuck in my own thoughts for hours.",
+    "emotion": "sadness",
+    "timestamp": "2026-05-15T23:21:29.846193"
+  },
+  {
+    "user_id": "testPaciente2",
+    "role": "assistant",
+    "content": "It sounds like you're experiencing a lot of rumination and catastrophizing, where your mind starts to spin out of control with worst-case scenarios and \"what-ifs\". It's like your brain is constantly on high alert, waiting for something to go wrong.\n\nAnd it makes sense that the quiet nights can be especially tough, when there's no distraction or external stimulation to take your mind off things. It's like you're stuck in a cycle of worrying and ruminating, with no clear way out.\n\nI'm here with you, though, and I want you to know that you're not alone in this. Can you tell me more about what you think might be driving some of these thoughts? Is there something specific that's been bothering you or making you feel anxious lately?",
+    "emotion": null,
+    "timestamp": "2026-05-15T23:21:29.846193"
   }
 ]
