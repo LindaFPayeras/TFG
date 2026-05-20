@@ -54,5 +54,33 @@
     "content": "El plazo l\u00edmite. Sientes una gran presi\u00f3n por cumplir con \u00e9l, \u00bfcierto? Es como si el tiempo estuviera corriendo y no puedas controlarlo. \u00bfTe sientes ansioso o estresado pensando en lo que tienes que hacer antes de que se cumpla el plazo?",
     "emotion": null,
     "timestamp": "2026-05-02T13:03:32.821969"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "user",
+    "content": "Hello, im tired",
+    "emotion": "sadness",
+    "timestamp": "2026-05-11T17:09:56.072747"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "assistant",
+    "content": "Hi again! I sense that you're feeling a bit exhausted, like the weight of your thesis deadline is bearing down on you. It's totally understandable to feel overwhelmed. Would you like to talk about what's been going through your mind lately? Sometimes sharing your thoughts and feelings can help you feel a little lighter.",
+    "emotion": null,
+    "timestamp": "2026-05-11T17:09:56.072747"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "user",
+    "content": "Hello 5 days till the deadline im sooo nervous",
+    "emotion": "fear",
+    "timestamp": "2026-05-15T18:39:15.029648"
+  },
+  {
+    "user_id": "testPaciente1",
+    "role": "assistant",
+    "content": "Hey! I'm right here with you, and I can totally understand why you're feeling so anxious with only 5 days left until your deadline! It's normal to feel overwhelmed when there's a lot riding on it. Can you tell me what specifically is making you most nervous about this deadline? Is it the thought of not meeting expectations or something else entirely?",
+    "emotion": null,
+    "timestamp": "2026-05-15T18:39:15.029648"
   }
 ]
