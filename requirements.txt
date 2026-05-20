@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+streamlit
+requests
+ollama
+transformers
+torch
+pydantic
+jwt
